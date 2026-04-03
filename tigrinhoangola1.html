@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="pt-AO"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <title>App do tigre Ao</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script async="" src="js/fbevents.js"></script><script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --background: 0 0% 5%;
+        --foreground: 0 0% 91%;
+        --card: 0 60% 5%;
+        --card-foreground: 0 0% 91%;
+        --muted: 0 0% 15%;
+        --muted-foreground: 0 0% 60%;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #000;
+        color: white;
+      }
+
+      .text-muted-foreground {
+        color: hsl(var(--muted-foreground));
+      }
+      .text-card-foreground {
+        color: hsl(var(--card-foreground));
+      }
+
+      /* ANIMAÇÃO FADE DE BAIXO PARA CIMA (LEVEZINHA) */
+      @keyframes fadeUpLight {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-modal {
+        animation: fadeUpLight 0.5s ease-out forwards;
+      }
+    </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1974645786620215');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1974645786620215&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  </head>
+  <body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="images/temple-bg.jpg" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0" style="
+            background: linear-gradient(
+              rgba(0, 0, 0, 0.3) 0%,
+              rgba(139, 10, 10, 0.6) 50%,
+              rgba(0, 0, 0, 0.85) 100%
+            );
+          "></div>
+      </div>
+
+      <div class="relative z-10 w-full max-w-[380px] mx-auto px-6">
+        <div id="view-register" class="animate-modal" style="display: block">
+          <div class="rounded-2xl p-6 text-center" style="
+              background: linear-gradient(
+                rgba(20, 5, 5, 0.92),
+                rgba(10, 2, 2, 0.96)
+              );
+              border: 1px solid rgba(218, 165, 32, 0.3);
+              box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 40px;
+            ">
+            <img src="images/tiger-header.png" alt="Fortune Tiger" class="w-20 h-20 object-contain mx-auto mb-2 drop-shadow-2xl">
+            <h1 class="text-xl font-extrabold mb-1" style="
+                background: linear-gradient(
+                    rgb(255, 217, 0),
+                    rgb(220, 166, 30),
+                    rgb(255, 128, 0)
+                  )
+                  text;
+                -webkit-text-fill-color: transparent;
+              ">
+              CRIAR CONTA
+            </h1>
+            <p class="text-xs text-muted-foreground mb-4">
+              Registe-se e ganhe 10 jogadas grátis
+            </p>
+            <div class="my-4 h-px" style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  rgba(218, 165, 32, 0.4),
+                  transparent
+                );
+              "></div>
+
+            <form class="space-y-3 text-left" onsubmit="processarFormulario(event, 'registro')">
+              <input id="reg-nome" class="w-full px-4 py-3 rounded-xl text-sm outline-none bg-[rgba(255,255,255,0.05)] border border-[rgba(218,165,32,0.25)] text-card-foreground placeholder:text-muted-foreground focus:border-[rgba(218,165,32,0.6)] transition-colors" placeholder="Seu nome" required="" value="">
+              <input id="reg-telefone" class="w-full px-4 py-3 rounded-xl text-sm outline-none bg-[rgba(255,255,255,0.05)] border border-[rgba(218,165,32,0.25)] text-card-foreground placeholder:text-muted-foreground focus:border-[rgba(218,165,32,0.6)] transition-colors" placeholder="Número de telefone" type="tel" required="" value="">
+              <div class="pt-2">
+                <button type="submit" class="w-full py-3.5 rounded-xl text-lg font-bold cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed" tabindex="0" style="
+                    background: linear-gradient(
+                      135deg,
+                      rgb(255, 217, 0),
+                      rgb(220, 166, 30),
+                      rgb(255, 128, 0)
+                    );
+                    color: rgb(26, 5, 5);
+                    box-shadow: rgba(255, 215, 0, 0.55) 0px 0px 35px;
+                    transform: none;
+                  ">
+                  🐅 Registar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function processarFormulario(event, tipo) {
+        event.preventDefault();
+
+        let nome = document.getElementById("reg-nome").value;
+        let telefone = document.getElementById("reg-telefone").value;
+
+        localStorage.setItem("jogador_nome", nome);
+        localStorage.setItem("jogador_telefone", telefone);
+
+        window.location.href = "tigrinhoangola2.html";
+      }
+    </script>
+  
+
+</body></html>

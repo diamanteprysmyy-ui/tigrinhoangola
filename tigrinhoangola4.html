@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="pt-AO"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App do tigre Ao</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+
+  /* FUNDO BONITO */
+  background: url("images/temple-bg.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* OVERLAY ESCURO */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* REMOVE FUNDO WISTIA */
+wistia-player[media-id='yobzwqfsik']:not(:defined) {
+  background: #000;
+  display: block;
+  padding-top:176.39%;
+}
+
+/* NOTIFICAÇÃO TOPO */
+#notificacao-topo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20,20,20,0.9);
+  padding: 12px 18px;
+  border-radius: 12px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  font-size: 14px;
+  z-index: 9999;
+}
+
+#notificacao-topo span.valor {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+/* BOTÃO */
+.btn {
+  margin-top: 20px;
+  padding: 16px;
+  width: 100%;
+  background: linear-gradient(135deg, gold, orange);
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,200,0,0.6);
+  transition: 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1974645786620215');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1974645786620215&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+<div style="max-width:400px;margin:auto;padding:20px">
+
+<h2 style="text-align:center;margin-bottom:20px;" >
+<strong>ASSISTA O VÍDEO ABAIXO PARA VER COMO RECEBER O SEU DINHEIRO AGORA MESMO</strong>
+</h2>
+
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/yobzwqfsik.js" async></script>
+
+<wistia-player media-id="yobzwqfsik"></wistia-player>
+
+<button class="btn" onclick="irPagamento()">
+💰 PAGAR TAXA ANTI-ROBÔ
+</button>
+
+</div>
+
+<!-- NOTIFICAÇÃO -->
+<div id="notificacao-topo">
+  ✅ <span id="texto-notif"></span>
+</div>
+
+<script>
+
+/* =========================
+   NOTIFICAÇÕES ESTILO TOPO
+========================= */
+
+const nomes = [
+"João","Mateus","Carlos","André","Paulo",
+"Fábio","Cláudio","Mário","Nelson","Bruno","Maria","Ana", "Jorge", "Malamba", "Eduardo"
+];
+
+function mostrarNotificacao() {
+
+  const nome = nomes[Math.floor(Math.random()*nomes.length)];
+  const valor = Math.floor(Math.random()*(320000-100000)+100000);
+
+  const notif = document.getElementById("notificacao-topo");
+  const texto = document.getElementById("texto-notif");
+
+  texto.innerHTML = `${nome} levantou <span class="valor">${valor.toLocaleString()} Kz</span>`;
+
+  notif.style.display = "flex";
+
+  setTimeout(() => {
+    notif.style.display = "none";
+  }, 3000);
+
+}
+
+/* LOOP CONTÍNUO */
+setInterval(() => {
+  mostrarNotificacao();
+}, 4000);
+
+/* BOTÃO */
+function irPagamento() {
+  window.location.href = "https://app.nublapay.com/chekout/38e9d244-ceee-4fd2-8f77-1a1047bbf2b0";
+}
+
+</script>
+
+</body></html>
